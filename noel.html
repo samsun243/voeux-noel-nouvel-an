@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Noël - PRIMS-TECH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="PRIMS-TECH icon.ico">
+</head>
+<body class="christmas">
+    <div id="snow-container"></div>
+    
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Logo PRIMS-TECH" class="logo">
+            <h1>Joyeux Noël !</h1>
+            <h2>Samson LOKO & PRIMS-TECH</h2>
+        </header>
+
+        <div class="message-box">
+            <h3>Que cette fête soit remplie de joie !</h3>
+            <p>Nous vous souhaitons un merveilleux Noël, entouré de ceux que vous aimez.</p>
+        </div>
+
+        <img src="P.jpeg" alt="Père Noël" class="visual-image">
+
+        <footer>
+            <p class="footer-text">&copy; 2024 Samson LOKO et l'entreprise PRIMS-TECH</p>
+            <a href="index.html" class="btn-switch">Vers les vœux du Nouvel An →</a>
+        </footer>
+    </div>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 7 + 's';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            
+            document.getElementById('snow-container').appendChild(snowflake);
+            
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000);
+        }
+
+        setInterval(createSnowflake, 200);
+    </script>
+</body>
+</html>
